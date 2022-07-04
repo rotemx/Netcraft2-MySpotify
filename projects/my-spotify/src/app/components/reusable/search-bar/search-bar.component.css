@@ -1,0 +1,14 @@
+input[type=button]
+{
+	border           : none;
+	background-color : cornflowerblue;
+	color            : white;
+	height           : 40px;
+	border-radius    : 10px;
+
+}
+
+input
+{
+	margin : 10px;
+}
