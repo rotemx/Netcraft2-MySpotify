@@ -3,18 +3,18 @@ import {Song} from "../types/interfaces/models/song";
 export const SONGS_MOCK:Song[] = [
 	{
 		artist:"Eminem",
-		songName: "Mom's Spaghetti"
+		name: "Mom's Spaghetti"
 	},
 	{
 		artist:"Eminem",
-		songName: "Without Me"
+		name: "Without Me"
 	},
 	{
 		artist:"Eminem",
-		songName: "The Real Slim Shady"
+		name: "The Real Slim Shady"
 	},
 	{
 		artist:"Eminem",
-		songName: "Whatever"
+		name: "Whatever"
 	},
 ]

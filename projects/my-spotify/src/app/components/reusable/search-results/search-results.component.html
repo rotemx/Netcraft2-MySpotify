@@ -1,8 +1,7 @@
 songs result:
-<ul>
-	<li *ngFor="let song of songs">
-		{{song.artist}}
-		<br>
-		{{song.songName}}
-	</li>
-</ul>
+<spot-song-item
+		[song]="song"
+		*ngFor="let song of songs"
+></spot-song-item>
+
+

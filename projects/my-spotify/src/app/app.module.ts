@@ -10,6 +10,7 @@ import { SearchPanelComponent }   from './components/views/search-panel/search-p
 import { SearchBarComponent }     from './components/reusable/search-bar/search-bar.component';
 import { SearchResultsComponent } from './components/reusable/search-results/search-results.component';
 import {FormsModule}              from "@angular/forms";
+import { SongItemComponent } from './components/reusable/song-item/song-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {FormsModule}              from "@angular/forms";
            ContentComponent,
            SearchPanelComponent,
            SearchBarComponent,
-           SearchResultsComponent
+           SearchResultsComponent,
+           SongItemComponent
   ],
     imports: [
         BrowserModule,
