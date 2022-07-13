@@ -3,9 +3,19 @@
 		<spot-search-bar (search)="onSongSearch($event)"></spot-search-bar>
 	</div>
 	<div class="search-results-wrapper">
-		<spot-search-results [songs]="songList"></spot-search-results>
+		<spot-search-results [songs]="songService.state.songList"></spot-search-results>
 	</div>
+	
+	<input
+			type="button"
+			value="set Ok status"
+			(click)="songService.state.status= 'Ok from Search Panel'"
+	>
+	
+	<input type="button" value="refresh" (click)="cdr.detectChanges()">
 	<code>
-		status: {{status}}
+		status: {{songService.state.status}}
+		<br>
+		song count: {{songService.state.songList.length}}
 	</code>
 </div>

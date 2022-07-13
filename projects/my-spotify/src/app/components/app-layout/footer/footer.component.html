@@ -1,2 +1,14 @@
+[{{songService.state.songList.length}}] songs loaded
 
-[X] songs loaded
+
+<input type="button" value="clear list" (click)="songService.clearList()">
+<input type="button" value="set first artist"
+       (click)="songService.state.songList[0].artist = 'Beyonce'">
+
+<br>
+
+<input
+		type="button"
+		value="set Ok status"
+		(click)="songService.state.status= 'Ok from Footer'"
+>

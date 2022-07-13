@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Song}                from "../../../../types/interfaces/models/song";
-import {SONGS_MOCK}          from "../../../../mock-data/SONGS_MOCK";
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from "@angular/core";
+import {SONGS_MOCK}                                      from "../../../../mock-data/SONGS_MOCK";
+import {SongService}       from "../../../services/song.service";
+
+declare let window:any;
 
 @Component({
   selector: 'spot-search-panel',
@@ -9,17 +11,22 @@ import {SONGS_MOCK}          from "../../../../mock-data/SONGS_MOCK";
 })
 export class SearchPanelComponent implements OnInit {
 
-  status:string = '';
   
-  songList:Song[] = [];
-  
-  constructor() { }
+  constructor(
+      public songService:SongService,
+      public cdr:ChangeDetectorRef
+      ) {
+    window['searchPanelComponent'] = this;
+  }
 
+  //lifecycle hook
   ngOnInit(): void {
   }
   
+  ngOnDestroy():void {}
+  
   onSongSearch(term:string) {
-    this.status   = "search clicked! term:" + term;
-    this.songList = SONGS_MOCK;
+    this.songService.state.status   = "search clicked! term:" + term;
+    this.songService.state.songList = [...SONGS_MOCK];  //spread operator - new reference (shallow copy = not deep clone)
   }
 }

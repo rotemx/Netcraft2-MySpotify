@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SongService}         from "../../../services/song.service";
 
 @Component({
   selector: 'spot-footer',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  //reflect-metadata
+  constructor(public songService:SongService) { }
 
   ngOnInit(): void {
   }
+  
 
 }
